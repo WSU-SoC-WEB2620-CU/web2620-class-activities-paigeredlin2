@@ -1,1 +1,84 @@
 /* TODO: Example 02 (Activity 3) CSS goes here */
+
+html{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: #fffdf5;
+}
+
+*, ::before, ::after{
+    box-sizing: inherit;
+}
+
+nav{
+    border-bottom: 1px solid #9c9c9c;
+    padding: .5rem;
+}
+
+nav > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav > ul > li{
+    margin: 0;
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*link styles*/
+
+nav a:link, nav a:visited, nav a:active{
+    text-decoration: none;
+    color: #6f6f6f;
+}
+
+nav a:hover{
+    text-decoration: none;
+    color: #7c2222;
+}
+
+/*footer styles*/
+
+footer{
+    margin: 2em .5rem;
+    padding: .5rem;
+    border-top: 1px solid #9c9c9c;
+}
+
+/*image styles*/
+
+img{
+    max-width: 300px;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 1em;
+}
+.container{
+    margin: 0 auto;
+    width: 80%;
+    counter-reset: article; /*Set a counter initial value to zero*/
+}
+/**/
+article > h1::before{
+    counter-increment: article; /*increases value of article by one*/
+    content: "Article " counter(article) ": "; /*displays "Article (value) :" before the content of the article*/
+    color:#7c2222;
+}
