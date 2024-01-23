@@ -76,9 +76,85 @@ img{
     width: 80%;
     counter-reset: article; /*Set a counter initial value to zero*/
 }
-/**/
+/*Styling articles*/
 article > h1::before{
     counter-increment: article; /*increases value of article by one*/
     content: "Article " counter(article) ": "; /*displays "Article (value) :" before the content of the article*/
     color:#7c2222;
 }
+
+/*Styling Circles*/
+.circle{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin:.5rem;
+    background-color: cornflowerblue;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+
+.vcenter{
+    line-height: 200px;
+
+}
+
+.vcenter2{
+    line-height: 200px;
+    margin: 0 calc((100% - 800px)/8);
+
+}
+/* other options 
+.vcenter2 > .circle::after{
+    content : "";
+    display : inline-block;
+    height : 100%
+    vertical-align : middle;}
+
+.vcenter3 > circle{
+    display: table-cell;
+    vertical-align: middle;
+    float: none;}*/
+
+/*Equal height columns*/
+.column{
+    float:left;
+    padding: 10px;
+    color: black;
+}
+.L-col{
+    background-color: #9c9c9c;
+    width: 25%;
+    padding: 10px
+}
+
+.M-col{
+    background-color: cornflowerblue;
+    width: 50%;
+    padding: 10px
+}
+
+.R-col{
+    background-color: #9c9c9c;
+    width: 25%;
+    padding: 10px
+}
+
+.equal-height{
+    display: table;
+
+}
+
+.equal-height .column{
+    float: none;
+    display: table-cell;
+    
+}
+ /*multicolumn styles*/
+ .multiple{
+    columns: 3;
+    column-gap: 2rem;
+ }
