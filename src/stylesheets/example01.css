@@ -113,11 +113,12 @@ body{
     }
 
     ul.links li{
-        color:black;
-        padding: .5rem;
+        ding: .5rem;
         background-color: antiquewhite;
         margin-bottom: .3rem;
         text-align: center;
+        color:black;
+        pad
     }
 
     ul.links > li > a{
