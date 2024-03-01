@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 16px;
+}
+
+$basic-color: #ccc;
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$error-color: #dc3545;
+$warning-color: #ffc107;
+
+$button-kinds: button, primary, secondary, success, error, warning;
+$button-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;
+
+$alert-types: alert, primary, secondary, success, error, warning;
+$alert-colors: #ccc, #007bff, #6c757d, #28a745, #dc3545, #ffc107;

@@ -1,0 +1,45 @@
+@mixin make-alert($color) {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  background: lighten($color, 10%);
+  color: darken($color, 30%);
+  border: 1px solid darken($color, 15%);
+  border-radius: 6px;
+
+  &.title {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    &::after {
+      content: " ";
+      display: block;
+      padding-top: 5px;
+      border-bottom: 1px solid darken(#ccc, 15%);
+    }
+  }
+}
+
+.alert {
+  @include make-alert($basic-color);
+
+  @each $type in $alert-types {
+    $ind2: index($alert-types, $type);
+    &.#{$type} {
+      @include make-alert(nth($alert-colors, $ind2));
+    }
+  }
+}
+
+// &.secondary {
+//   //TODO: use color #6c757d;
+// }
+// &.success {
+//   //TODO: use color #28a745;
+// }
+// &.error {
+//   //TODO: use color #dc3545
+// }
+// &.primary {
+//   //TODO: use color #ffc107
+// }

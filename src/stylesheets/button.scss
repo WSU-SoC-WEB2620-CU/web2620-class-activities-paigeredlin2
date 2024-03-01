@@ -1,0 +1,52 @@
+@mixin make-button($color) {
+  margin: 0.5em;
+  padding: 0.5em 1em;
+  font-size: 1.2rem;
+  display: inline-block;
+  background: $color;
+  color: white;
+  border: 1px solid darken($color, 15%);
+  border-radius: 6px;
+  transition: background-color 0.35s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    background: lighten($color, 10%);
+  }
+
+  @media (min-width: 500px) {
+    width: calc(50% - 2em);
+  }
+
+  @media (min-width: 740px) {
+    width: auto;
+  }
+}
+
+// buttons = single line comment
+.button {
+  @include make-button($basic-color);
+
+  @each $kind in $button-kinds {
+    $ind: index($button-kinds, $kind);
+    &.#{$kind} {
+      @include make-button(nth($button-colors, $ind));
+    }
+  }
+}
+
+// &.primary {
+//   @include make-button($primary-color);
+// }
+// &.secondary {
+//   @include make-button($secondary-color);
+// }
+// &.success {
+//   @include make-button($success-color);
+// }
+// &.error {
+//   @include make-button($error-color);
+// }
+// &.primary {
+//   @include make-button($warning-color);
+// }
