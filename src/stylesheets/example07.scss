@@ -1,1 +1,76 @@
 /* TODO: Example 07 (Activity 8) CSS goes here */
+@import "global";
+@import "button";
+
+@function calc-font-size($num){
+    @if unitless($num){
+        @return 3 - ($num - 1) * .3;
+    }
+    @else{
+        @debug "invalid argument - must be unitless"; 
+        @return 0;
+    }  
+}
+
+@function calc-header-color($num, $color1, $color2){
+    @return mix($color1, $color2, $num*15%)
+}
+
+
+@for $num from 1 through 6{
+  h#{$num}{
+        font-size: calc-font-size($num)*1rem; 
+        //call to function
+        color: calc-header-color($num, red, blue);
+        //call to function where we can easily change arguments
+    }
+}
+
+// $num: 1;
+// @while $num <= 6{
+//     h#{$num}{
+//     font-size: calc-font-size($num)*1rem; 
+//     color: calc-header-color($num, red, blue) 
+//     //call to functions
+//     }
+    
+// $num: $num + 1;
+// }
+
+$header-list: huge, xlarge, large, medium, small, tiny;
+
+%header{ //placeholder
+    font-weight: bolder;
+    margin: .5rem;
+
+    @at-root a#{&}{
+        text-decoration: none;
+    }
+}
+
+@each $hdr in $header-list{
+    .header.#{$hdr}{
+        @extend %header; 
+        //extended the %header styles to each header in the list
+        @extend h#{index($header-list, $hdr)}
+    }
+}
+
+.new{
+    @extend .button, .primary;
+}
+
+.edit{
+    @extend .button, .secondary;
+}
+
+.approve{
+    @extend .button, .success;
+}
+
+.deny{
+    @extend .button, .error;
+}
+.warn{
+    @extend .button, .warning;
+}

@@ -1,0 +1,32 @@
+/* TODO: Example 07 (Activity 8) CSS goes here */
+h1, .header.huge {
+  font-size: 3rem;
+  color: #2600d9;
+}
+
+h2, .header.xlarge {
+  font-size: 2.7rem;
+  color: #4d00b3;
+}
+
+h3, .header.large {
+  font-size: 2.4rem;
+  color: #73008c;
+}
+
+h4, .header.medium {
+  font-size: 2.1rem;
+  color: #990066;
+}
+
+h5, .header.small {
+  font-size: 1.8rem;
+  color: #bf0040;
+}
+
+h6, .header.tiny {
+  font-size: 1.5rem;
+  color: #e6001a;
+}
+
+/*# sourceMappingURL=example07.css.map */

@@ -1,0 +1,28 @@
+
+$primary: purple;
+$secondary: Orange;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+
+.btn-ok{
+    @include button-variant(blue, lightgray);
+}
+
+.btn-cancel{
+    @include button-variant(red, lightgray);
+}
+
+@each $color, $value in $theme-colors{
+    .ale    rt-#{$color}{
+        box-shadow: 3px 3px gray;
+    }
+}
